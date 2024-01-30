@@ -5,13 +5,15 @@
 @import 'base/reset';
 @import 'base/global';
 
-//components
-@import 'components/menu';
+//sections
+@import 'sections/hero';
 
 //layouts
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
 
-//sections
-// @import 'sections/...;
+//components
+@import 'components/menu';
+@import 'components/text';
+@import 'components/filter';

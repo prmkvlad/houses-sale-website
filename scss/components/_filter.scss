@@ -1,0 +1,131 @@
+.filter {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 165px;
+	color: #000;
+
+	@media (max-width: 576px) {
+		grid-template-columns: repeat(3, 1fr);
+		padding: 10px 5px 5px 5px;
+		height: auto;
+	}
+
+	@media (max-width: 475px) {
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+
+	&__block {
+		cursor: pointer;
+
+		&:nth-child(2) {
+			border-left: 1px solid #E8E8E8;
+			border-right: 1px solid #E8E8E8;
+		}
+	}
+
+	&__btn {
+		padding: 5px;
+
+		@media (min-width: 475px) and (max-width: 576px) {
+			grid-column: 1/4;
+		}
+
+		button {
+			background-color: var(--accent-color);
+			height: 100%;
+			width: 100%;
+			color: #fff;
+			font-size: 24px;
+			font-weight: 500;
+			text-transform: capitalize;
+			cursor: pointer;
+			transition: background-color 0.3s ease 0s;
+			padding: 10px;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: #15786C;
+				}
+			}
+		}
+	}
+}
+
+.block-filter {
+	position: relative;
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		padding: 0 clamp(0.625rem, 0.08rem + 2.73vw, 2.5rem);
+		height: 100%;
+		flex-direction: column;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+
+	&__type {
+		padding-right: 4px;
+		color: #858585;
+		font-size: 16px;
+	}
+
+	&__icon {
+		width: 10px;
+		height: 7px;
+		background: url('/img/icons/arrow-dropdown.svg') center no-repeat;
+		transition: all 0.3s ease 0s;
+
+
+		&._active {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__value {
+		color: var(--bg-color);
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 126%;
+		text-transform: capitalize;
+	}
+
+	&__dropdown {
+		position: absolute;
+		z-index: 5;
+		top: 100%;
+		right: 0;
+		left: 0;
+		background-color: #fff;
+		border-radius: 5px;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.3s ease 0s;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+		&._active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+			transform: translateY(5px);
+		}
+	}
+
+	&__item {
+		padding: 10px;
+		transition: background-color 0.2s ease 0s;
+		text-transform: capitalize;
+		cursor: pointer;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #adadad;
+			}
+		}
+	}
+}
