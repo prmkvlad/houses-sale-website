@@ -30,3 +30,29 @@ if (filter) {
 		})
 	})
 }
+
+// Popular slider
+
+const swiper = new Swiper('.swiper', {
+	spaceBetween: 20,
+	slidesPerView: 1,
+	loop: true,
+	autoplay: {
+		delay: 2500,
+		disableOnInteraction: false,
+	},
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	breakpoints: {
+		// when window width is >= 320px
+		992: {
+			slidesPerView: 3,
+		},
+		662: {
+			slidesPerView: 2,
+		}
+	}
+});

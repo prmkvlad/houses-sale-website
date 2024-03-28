@@ -1,0 +1,52 @@
+.swiper {
+	overflow: hidden;
+}
+
+.swiper-wrapper {
+	display: inline-flex;
+}
+
+.swiper-slide {}
+
+.slider-buttons {
+	position: absolute;
+	top: 30%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	@media (max-width: 1800px) {
+		top: -100px;
+		right: 0;
+		width: auto;
+		gap: 28px;
+	}
+}
+
+.swiper-button-prev {
+	position: absolute;
+	left: -130px;
+}
+
+.swiper-button-next {
+	position: absolute;
+	right: -130px;
+	transform: rotate(180deg);
+}
+
+.popular-slider-btn {
+	width: 78px;
+	height: 78px;
+	border-radius: 50%;
+	background: url('/img/icons/arrow-slider.svg') left 30px center no-repeat;
+	border: 1px solid #fff;
+	cursor: pointer;
+
+	@media (max-width: 1800px) {
+		position: static;
+	}
+
+	@media (max-width: 660px) {
+		display: none;
+	}
+}
