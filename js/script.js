@@ -56,7 +56,7 @@ if (filter) {
 
 // Popular slider
 
-const swiper = new Swiper('.swiper', {
+const popularSlider = new Swiper('.popular-slider', {
 	spaceBetween: 20,
 	slidesPerView: 1,
 	loop: true,
@@ -66,8 +66,8 @@ const swiper = new Swiper('.swiper', {
 	},
 	// Navigation arrows
 	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		nextEl: '.popular-slider-next',
+		prevEl: '.popular-slider-prev',
 	},
 	breakpoints: {
 		// when window width is >= 320px
@@ -77,5 +77,18 @@ const swiper = new Swiper('.swiper', {
 		662: {
 			slidesPerView: 2,
 		}
+	}
+});
+
+// Reviews slider
+
+const reviewsSlider = new Swiper('.slider-reviews', {
+	spaceBetween: 20,
+	slidesPerView: 1,
+	autoHeight: true,
+	// Navigation arrows
+	navigation: {
+		nextEl: '.slider-reviews-next',
+		prevEl: '.slider-reviews-prev',
 	}
 });
