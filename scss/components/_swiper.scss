@@ -57,12 +57,17 @@
 
 .reviews {
 	position: relative;
+	padding-bottom: clamp(1.875rem, -0.852rem + 13.64vw, 11.25rem);
 
 	.reviews-deco {
 		position: absolute;
 		top: -500px;
 		left: 0;
 		z-index: -1;
+
+		@media (max-width: 475px) {
+			width: 300px;
+		}
 	}
 
 	.swiper-wrapper {

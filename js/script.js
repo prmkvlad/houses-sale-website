@@ -60,10 +60,6 @@ const popularSlider = new Swiper('.popular-slider', {
 	spaceBetween: 20,
 	slidesPerView: 1,
 	loop: true,
-	autoplay: {
-		delay: 2500,
-		disableOnInteraction: false,
-	},
 	// Navigation arrows
 	navigation: {
 		nextEl: '.popular-slider-next',
@@ -92,3 +88,24 @@ const reviewsSlider = new Swiper('.slider-reviews', {
 		prevEl: '.slider-reviews-prev',
 	}
 });
+
+// Gallery
+
+const galleryItems = document.querySelectorAll('.gallery__item');
+
+if (galleryItems.length > 0) {
+	let delay = 5000; // начальное значение задержки
+
+	galleryItems.forEach(item => {
+		new Swiper(item, {
+			slidesPerView: 1,
+			autoplay: {
+				delay: delay,
+			},
+			effect: 'fade',
+		});
+
+		// увеличиваем задержку для следующего слайдера
+		delay += 300; // увеличиваем задержку на 0.3 секунды
+	});
+}
