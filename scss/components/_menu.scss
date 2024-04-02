@@ -10,6 +10,7 @@
 		overflow: auto;
 		padding: 20px 0;
 		transition: left 0.3s ease 0s;
+		z-index: 2;
 
 		&._active {
 			left: 0;
