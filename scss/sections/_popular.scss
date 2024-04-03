@@ -13,26 +13,7 @@
 
 	&__link {
 		text-align: center;
-		margin-top: 65px;
-	}
-
-	&__link a {
-		display: inline-block;
-		padding: 22px 42px;
-		color: #fff;
-		font-size: 24px;
-		font-weight: 500;
-		line-height: 28px;
-		text-transform: capitalize;
-		margin: 0 auto;
-		background-color: var(--accent-color);
-		transition: all 0.3s ease 0s;
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #15786c;
-			}
-		}
+		margin-top: clamp(2rem, 1.25rem + 3.75vw, 4.063rem);
 	}
 }
 

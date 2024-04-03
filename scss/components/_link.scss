@@ -1,0 +1,16 @@
+.link {
+	display: inline-block;
+	padding: 22px 42px;
+	background-color: var(--accent-color);
+	color: #fff;
+	font-weight: 500;
+	font-size: clamp(1rem, 0.855rem + 0.73vw, 1.5rem);
+	text-transform: capitalize;
+	transition: background-color 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #15786c;
+		}
+	}
+}

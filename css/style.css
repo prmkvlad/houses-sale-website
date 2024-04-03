@@ -108,7 +108,6 @@ body._lock {
 
 .hero {
   margin-top: clamp(1.25rem, 0.25rem + 5vw, 4.688rem);
-  padding-bottom: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
   position: relative;
 }
 .hero .hero-decor {
@@ -198,24 +197,7 @@ body._lock {
 }
 .popular__link {
   text-align: center;
-  margin-top: 65px;
-}
-.popular__link a {
-  display: inline-block;
-  padding: 22px 42px;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 28px;
-  text-transform: capitalize;
-  margin: 0 auto;
-  background-color: var(--accent-color);
-  transition: all 0.3s ease 0s;
-}
-@media (any-hover: hover) {
-  .popular__link a:hover {
-    background-color: #15786c;
-  }
+  margin-top: clamp(2rem, 1.25rem + 3.75vw, 4.063rem);
 }
 
 .popular-slide {
@@ -328,14 +310,65 @@ body._lock {
   margin-top: clamp(1rem, 0.891rem + 0.55vw, 1.375rem);
 }
 .gallery__link {
-  display: inline-block;
   margin-top: clamp(2rem, 1.764rem + 1.18vw, 2.813rem);
-  padding: 22px 42px;
-  background-color: var(--accent-color);
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 576px) {
+  .gallery__link {
+    text-align: center;
+  }
+}
+
+.begin {
+  position: relative;
+  padding: clamp(1.875rem, -0.852rem + 13.64vw, 11.25rem) 0;
+}
+.begin .begin-wave {
+  position: absolute;
+  z-index: -1;
+}
+.begin .begin-rect {
+  position: absolute;
+  top: -77px;
+  right: -65px;
+  opacity: 0.8;
+}
+.begin__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 0.891rem + 0.55vw, 1.375rem);
+  max-width: 1240px;
+}
+@media (max-width: 768px) {
+  .begin__container {
+    flex-direction: column;
+  }
+}
+.begin__slogan {
+  font-size: clamp(1.875rem, 1.184rem + 3.45vw, 4.25rem);
+  font-weight: 600;
+  line-height: 126%;
   text-transform: capitalize;
+  max-width: 512px;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .begin__slogan {
+    text-align: center;
+  }
+}
+.begin__content {
+  flex: 0 0 50%;
+}
+.begin__link {
+  margin-top: clamp(2rem, 1.764rem + 1.18vw, 2.813rem);
+}
+@media (max-width: 576px) {
+  .begin__link {
+    text-align: center;
+  }
 }
 
 .header {
@@ -626,6 +659,22 @@ body._lock {
 @media (any-hover: hover) {
   .block-filter__item:hover {
     background-color: #adadad;
+  }
+}
+
+.link {
+  display: inline-block;
+  padding: 22px 42px;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.855rem + 0.73vw, 1.5rem);
+  text-transform: capitalize;
+  transition: background-color 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .link:hover {
+    background-color: #15786c;
   }
 }
 

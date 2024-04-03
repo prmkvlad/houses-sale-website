@@ -1,0 +1,55 @@
+.begin {
+	position: relative;
+	padding: clamp(1.875rem, -0.852rem + 13.64vw, 11.25rem) 0;
+
+	.begin-wave {
+		position: absolute;
+		z-index: -1;
+	}
+
+	.begin-rect {
+		position: absolute;
+		top: -77px;
+		right: -65px;
+		opacity: 0.8;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: clamp(1rem, 0.891rem + 0.55vw, 1.375rem);
+		max-width: 1240px;
+
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
+	}
+
+	&__slogan {
+		font-size: clamp(1.875rem, 1.184rem + 3.45vw, 4.25rem);
+		font-weight: 600;
+		line-height: 126%;
+		text-transform: capitalize;
+		max-width: 512px;
+		z-index: 1;
+
+		@media (max-width: 768px) {
+			text-align: center;
+		}
+	}
+
+	&__content {
+		flex: 0 0 50%;
+	}
+
+	&__text {}
+
+	&__link {
+		margin-top: clamp(2rem, 1.764rem + 1.18vw, 2.813rem);
+
+		@media (max-width: 576px) {
+			text-align: center;
+		}
+	}
+}
