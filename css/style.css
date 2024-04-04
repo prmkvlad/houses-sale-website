@@ -114,7 +114,7 @@ body._lock {
 .hero .hero-decor {
   position: absolute;
   bottom: -150px;
-  right: 0;
+  right: -75px;
   z-index: -1;
 }
 @media (max-width: 576px) {
