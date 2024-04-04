@@ -1,0 +1,130 @@
+.footer {
+	background-color: #1A242F;
+	padding-top: clamp(1.875rem, -0.125rem + 10vw, 8.75rem);
+
+	&__main {
+		padding-bottom: clamp(1.875rem, 0.784rem + 5.45vw, 5.625rem);
+	}
+
+	.main-footer__container {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: clamp(1.875rem, -14.494rem + 26.19vw, 8.75rem);
+
+		@media (max-width: 992px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@media (max-width: 600px) {
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+		}
+
+		@media (max-width: 425px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__block {
+		@media (max-width: 992px) {
+			grid-column: 1/5;
+
+			&:not(:first-child) {
+				grid-row: 2/3;
+				grid-column: auto;
+			}
+		}
+
+		@media (max-width: 600px) {
+
+			&:nth-child(4),
+			&:nth-child(5) {
+				grid-row: 3/4;
+				grid-column: auto;
+			}
+		}
+	}
+
+	&__link {}
+
+	&__text {
+		margin: clamp(1rem, 0.891rem + 0.55vw, 1.375rem) 0;
+
+		@media (min-width: 992px) {
+			width: 340px;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		@media (max-width: 425px) {
+			justify-content: center;
+		}
+	}
+
+	&__social {
+		svg {
+			fill: #555E68;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					transition: all 0.3s ease 0s;
+					fill: #FFFFFF;
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		border-top: 1px solid #303A44;
+		padding: 15px 0;
+
+		.copyright__container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media (max-width: 768px) {
+				flex-direction: column;
+				gap: clamp(1rem, 0.598rem + 2.01vw, 1.563rem);
+				text-align: center;
+			}
+		}
+	}
+}
+
+.footer_social {}
+
+.links-footer {
+
+	&__header {
+		font-size: 26px;
+		font-weight: 600;
+		text-transform: capitalize;
+		margin-bottom: 11px;
+	}
+
+	&__list {}
+
+	&__item {}
+
+	&__link {
+		transition: color 0.3s ease 0s;
+		white-space: nowrap;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}

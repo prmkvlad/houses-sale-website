@@ -54,11 +54,11 @@
 	}
 
 	&__link {
-		margin-top: clamp(2rem, 1.764rem + 1.18vw, 2.813rem);
+		margin-top: clamp(1.875rem, 1.602rem + 1.36vw, 2.813rem);
 		position: relative;
 		z-index: 1;
 
-		@media (max-width: 576px) {
+		@media (max-width: 768px) {
 			text-align: center;
 		}
 	}

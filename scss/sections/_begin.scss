@@ -4,6 +4,8 @@
 
 	.begin-wave {
 		position: absolute;
+		bottom: -350px;
+		left: -90px;
 		z-index: -1;
 	}
 
@@ -11,7 +13,11 @@
 		position: absolute;
 		top: -77px;
 		right: -65px;
-		opacity: 0.8;
+
+		@media (max-width: 425px) {
+			right: -83px;
+			transform: scale(0.7);
+		}
 	}
 
 	&__container {
@@ -46,9 +52,10 @@
 	&__text {}
 
 	&__link {
-		margin-top: clamp(2rem, 1.764rem + 1.18vw, 2.813rem);
+		margin-top: clamp(1.875rem, 1.602rem + 1.36vw, 2.813rem);
 
-		@media (max-width: 576px) {
+
+		@media (max-width: 768px) {
 			text-align: center;
 		}
 	}
