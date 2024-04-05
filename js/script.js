@@ -42,16 +42,45 @@ const filter = document.querySelector('.filter');
 if (filter) {
 	const items = filter.querySelectorAll('.block-filter');
 
+	// Закрытие всех выпадающих списков при клике вне фильтра или на кнопку
+	document.addEventListener('click', event => {
+		if (!event.target.closest('.filter') || event.target.closest('.filter__btn')) {
+			closeAllDropdowns();
+		}
+	});
+
 	items.forEach(item => {
 		item.addEventListener('click', event => {
-			item.querySelector('.block-filter__dropdown').classList.toggle('_active');
-			item.querySelector('.block-filter__icon').classList.toggle('_active');
+			const dropdown = item.querySelector('.block-filter__dropdown');
+			const icon = item.querySelector('.block-filter__icon');
+			const isActive = dropdown.classList.contains('_active');
 
+			// Проверка, был ли клик на элементе списка
 			if (event.target.classList.contains('block-filter__item')) {
 				item.querySelector('.block-filter__value').textContent = event.target.textContent;
+
+				// Закрытие выпадающего списка после выбора элемента
+				dropdown.classList.remove('_active');
+				icon.classList.remove('_active');
+			} else {
+				// Закрытие всех других выпадающих списков при открытии текущего
+				closeAllDropdowns();
+
+				// Переключение классов для текущего элемента
+				if (!isActive) {
+					dropdown.classList.toggle('_active');
+					icon.classList.toggle('_active');
+				}
 			}
-		})
-	})
+		});
+	});
+
+	function closeAllDropdowns() {
+		items.forEach(item => {
+			item.querySelector('.block-filter__dropdown').classList.remove('_active');
+			item.querySelector('.block-filter__icon').classList.remove('_active');
+		});
+	}
 }
 
 // Popular slider
@@ -94,7 +123,7 @@ const reviewsSlider = new Swiper('.slider-reviews', {
 const galleryItems = document.querySelectorAll('.gallery__item');
 
 if (galleryItems.length > 0) {
-	let delay = 5000; // начальное значение задержки
+	let delay = 5000; // initial delay value
 
 	galleryItems.forEach(item => {
 		new Swiper(item, {
@@ -105,7 +134,6 @@ if (galleryItems.length > 0) {
 			effect: 'fade',
 		});
 
-		// увеличиваем задержку для следующего слайдера
-		delay += 300; // увеличиваем задержку на 0.3 секунды
+		delay += 300; // increase delay by 0.3 seconds
 	});
 }
