@@ -140,7 +140,11 @@
 }
 
 .slider-reviews-btn {
+	cursor: pointer;
+
 	&.swiper-button-disabled {
+		cursor: default;
+
 		svg {
 			fill: #767F89;
 		}

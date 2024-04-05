@@ -786,6 +786,7 @@ body._lock {
   font-size: clamp(1rem, 0.855rem + 0.73vw, 1.5rem);
   text-transform: capitalize;
   transition: background-color 0.3s ease 0s;
+  cursor: pointer;
 }
 @media (any-hover: hover) {
   .link:hover {
@@ -922,6 +923,12 @@ body._lock {
   width: 1px;
 }
 
+.slider-reviews-btn {
+  cursor: pointer;
+}
+.slider-reviews-btn.swiper-button-disabled {
+  cursor: default;
+}
 .slider-reviews-btn.swiper-button-disabled svg {
   fill: #767F89;
 }
