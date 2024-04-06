@@ -150,28 +150,6 @@ function createSwiper() {
 	});
 }
 
-
-function createSwiper() {
-	return new Swiper('.popular-slider', {
-		spaceBetween: 20,
-		slidesPerView: 1,
-		loop: true,
-		// Navigation arrows
-		navigation: {
-			nextEl: '.popular-slider-next',
-			prevEl: '.popular-slider-prev',
-		},
-		breakpoints: {
-			992: {
-				slidesPerView: 3,
-			},
-			662: {
-				slidesPerView: 2,
-			}
-		}
-	});
-}
-
 // Reviews slider
 
 const reviewsSlider = new Swiper('.slider-reviews', {
