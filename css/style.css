@@ -196,9 +196,9 @@ body._lock {
   margin-top: 40px;
   position: relative;
 }
-.popular__link {
-  text-align: center;
+.popular__btn-wrapper {
   margin-top: clamp(1.875rem, 1.602rem + 1.36vw, 2.813rem);
+  text-align: center;
 }
 
 .popular-slide {
@@ -808,6 +808,29 @@ body._lock {
 
 .swiper-wrapper {
   display: inline-flex;
+}
+
+/* Initial styles for the slider */
+.popular__slider .swiper-wrapper {
+  display: inline-flex;
+  gap: 0px;
+}
+
+/* Styles for the grid layout applied when "View all" button is clicked */
+.popular__slider._grid-mode .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 662px) {
+  .popular__slider._grid-mode .swiper-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .popular__slider._grid-mode .swiper-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .slider-buttons {

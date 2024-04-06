@@ -83,27 +83,94 @@ if (filter) {
 	}
 }
 
-// Popular slider
+// Popular slider and showAll button
 
-const popularSlider = new Swiper('.popular-slider', {
-	spaceBetween: 20,
-	slidesPerView: 1,
-	loop: true,
-	// Navigation arrows
-	navigation: {
-		nextEl: '.popular-slider-next',
-		prevEl: '.popular-slider-prev',
-	},
-	breakpoints: {
-		// when window width is >= 320px
-		992: {
-			slidesPerView: 3,
-		},
-		662: {
-			slidesPerView: 2,
-		}
+document.addEventListener('DOMContentLoaded', () => {
+	const showAllButton = document.getElementById('showAll');
+	const sliderContainer = document.querySelector('.popular__slider');
+	const sliderButtonsContainer = document.querySelector('.slider-buttons');
+	let isSliderShown = true; // Flag to track the current state
+	let popularSlider = createSwiper(); // Creating the initial Swiper instance
+
+	if (showAllButton) {
+		showAllButton.addEventListener('click', () => {
+			if (isSliderShown) {
+				// Destroying the Swiper
+				popularSlider.destroy(true, true);
+
+				// Hiding navigation buttons
+				sliderButtonsContainer.style.display = 'none';
+
+				// Applying the grid mode class
+				sliderContainer.classList.add('_grid-mode');
+
+				// Changing the button text
+				showAllButton.textContent = 'Hide all';
+
+				// Updating the state flag
+				isSliderShown = false;
+			} else {
+				// Creating a new Swiper instance
+				popularSlider = createSwiper();
+
+				// Showing navigation buttons
+				sliderButtonsContainer.style.display = 'flex';
+
+				// Removing the grid mode class
+				sliderContainer.classList.remove('_grid-mode');
+
+				// Changing the button text
+				showAllButton.textContent = 'View all';
+
+				// Updating the state flag
+				isSliderShown = true;
+			}
+		});
 	}
 });
+
+function createSwiper() {
+	return new Swiper('.popular-slider', {
+		spaceBetween: 20,
+		slidesPerView: 1,
+		loop: true,
+		// Navigation arrows
+		navigation: {
+			nextEl: '.popular-slider-next',
+			prevEl: '.popular-slider-prev',
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+			},
+			662: {
+				slidesPerView: 2,
+			}
+		}
+	});
+}
+
+
+function createSwiper() {
+	return new Swiper('.popular-slider', {
+		spaceBetween: 20,
+		slidesPerView: 1,
+		loop: true,
+		// Navigation arrows
+		navigation: {
+			nextEl: '.popular-slider-next',
+			prevEl: '.popular-slider-prev',
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+			},
+			662: {
+				slidesPerView: 2,
+			}
+		}
+	});
+}
 
 // Reviews slider
 

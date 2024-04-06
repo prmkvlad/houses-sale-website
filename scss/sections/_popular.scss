@@ -11,9 +11,9 @@
 		position: relative;
 	}
 
-	&__link {
-		text-align: center;
+	&__btn-wrapper {
 		margin-top: clamp(1.875rem, 1.602rem + 1.36vw, 2.813rem);
+		text-align: center;
 	}
 }
 
