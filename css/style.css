@@ -190,7 +190,7 @@ body._lock {
 }
 .popular {
   padding: clamp(1.875rem, -0.489rem + 11.82vw, 10rem) 0;
-  background: rgba(26, 36, 47, 0.6) url("./img/slider/slider-bg.png") center center/cover no-repeat;
+  background: rgba(26, 36, 47, 0.6) url("../img/slider/slider-bg.png") center center/cover no-repeat;
 }
 .popular__slider {
   margin-top: 40px;
@@ -731,7 +731,7 @@ body._lock {
 .block-filter__icon {
   width: 10px;
   height: 7px;
-  background: url("./img/icons/arrow-dropdown.svg") center no-repeat;
+  background: url("../img/icons/arrow-dropdown.svg") center no-repeat;
   transition: all 0.3s ease 0s;
 }
 .block-filter__icon._active {
@@ -864,7 +864,7 @@ body._lock {
   width: 78px;
   height: 78px;
   border-radius: 50%;
-  background: url("./img/icons/arrow-slider.svg") left 30px center no-repeat;
+  background: url("../img/icons/arrow-slider.svg") left 30px center no-repeat;
   border: 1px solid #fff;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
