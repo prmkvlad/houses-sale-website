@@ -65,6 +65,8 @@
 	background: url('/img/icons/arrow-slider.svg') left 30px center no-repeat;
 	border: 1px solid #fff;
 	cursor: pointer;
+	transition: background-color 0.3s ease 0s;
+
 
 	@media (max-width: 1800px) {
 		position: static;
@@ -72,6 +74,12 @@
 
 	@media (max-width: 660px) {
 		display: none;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #ffffff37;
+		}
 	}
 }
 
