@@ -86,6 +86,7 @@ if (filter) {
 // Popular slider and showAll button
 
 document.addEventListener('DOMContentLoaded', () => {
+	const popularSection = document.getElementById('popular');
 	const showAllButton = document.getElementById('showAll');
 	const sliderContainer = document.querySelector('.popular__slider');
 	const sliderButtonsContainer = document.querySelector('.slider-buttons');
@@ -124,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				// Updating the state flag
 				isSliderShown = true;
+
+				// Goto slider
+				popularSection.scrollIntoView();
 			}
 		});
 	}
