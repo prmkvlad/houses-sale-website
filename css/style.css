@@ -235,7 +235,7 @@ body._lock {
 }
 .popular-slide__label span {
   color: rgb(214, 214, 214);
-  font-size: 16px;
+  font-size: clamp(0.778rem, 0.745rem + 0.162vw, 0.889rem);
   line-height: 19px;
   letter-spacing: 0%;
   text-transform: capitalize;
@@ -918,8 +918,9 @@ body._lock {
   text-transform: capitalize;
 }
 .slider-reviews__text {
+  overflow: hidden;
   font-size: clamp(1.25rem, 0.977rem + 1.36vw, 2rem);
-  line-height: 157%;
+  line-height: 1.57;
   text-transform: capitalize;
 }
 .slider-reviews__info {

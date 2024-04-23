@@ -128,8 +128,9 @@
 	&__slide {}
 
 	&__text {
+		overflow: hidden;
 		font-size: clamp(1.25rem, 0.977rem + 1.36vw, 2rem);
-		line-height: 157%;
+		line-height: 1.57;
 		text-transform: capitalize;
 	}
 

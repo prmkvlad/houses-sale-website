@@ -131,6 +131,33 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}
+
+	// reviews length settings
+
+	const reviews = document.querySelectorAll('.slider-reviews__text');
+
+	reviews.forEach(review => {
+		const fullText = review.textContent;
+		const maxTextLength = 380; // Максимальная длина текста
+
+		if (fullText.length > maxTextLength) {
+			const truncatedText = fullText.slice(0, maxTextLength) + '...';
+			review.textContent = truncatedText;
+			review.style.cursor = 'pointer';
+
+			review.addEventListener('click', function () {
+				if (review.textContent === truncatedText) {
+					review.textContent = fullText;
+					review.style.maxHeight = 'none';
+				} else {
+					review.textContent = truncatedText;
+					review.style.maxHeight = 'clamp(27.5rem, 30.071rem + -12.86vw, 21.875rem)';
+					review.scrollIntoView();
+				}
+				reviewsSlider.updateAutoHeight();
+			});
+		}
+	});
 });
 
 function createSwiper() {

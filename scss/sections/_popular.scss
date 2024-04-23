@@ -59,7 +59,7 @@
 
 		span {
 			color: rgb(214, 214, 214);
-			font-size: 16px;
+			font-size: clamp(0.778rem, 0.745rem + 0.162vw, 0.889rem);
 			line-height: 19px;
 			letter-spacing: 0%;
 			text-transform: capitalize;
